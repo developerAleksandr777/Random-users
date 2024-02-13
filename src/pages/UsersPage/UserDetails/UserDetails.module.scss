@@ -1,0 +1,30 @@
+.details__wrap {
+  margin-top: 50px;
+
+  .box {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      color: rgb(21, 19, 23);
+      line-height: 136.19%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    &__wrap {
+      p {
+        margin: 0;
+      }
+
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      margin-left: 130px;
+    }
+  }
+}

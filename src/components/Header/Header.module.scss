@@ -1,0 +1,22 @@
+header {
+  background-color: rgb(81, 38, 137);
+  width: 100%;
+  padding: 64px 0;
+  position: relative;
+  .header__wrap {
+    h1 {
+      color: rgb(255, 255, 255);
+      font-size: 64px;
+      line-height: 75px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    h2 {
+      color: rgb(248, 248, 248);
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+    }
+  }
+}
+

@@ -1,0 +1,44 @@
+.registerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .box {
+    width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+    background: rgb(255, 255, 255);
+    padding: 16px;
+
+    .wrap__inputs {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      .render__inputs {
+        p {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+
+
+    h2 {
+      color: rgb(21, 19, 23);
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      border-radius: 8px;
+      width: 100%;
+      background: rgb(81, 38, 137);
+      padding: 8px 12px 8px 12px;
+      color: rgb(255, 255, 255);
+      line-height: 136.19%;
+      margin-top: 24px;
+    }
+  }
+}
