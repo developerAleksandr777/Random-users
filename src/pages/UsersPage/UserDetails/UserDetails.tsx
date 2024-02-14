@@ -27,8 +27,21 @@ const UserDetails = () => {
             <HeaderDetails/>
             <div className="container">
                 <div className={cls.details__wrap}>
-                    <div className="row">
-                        <div className="col-7">
+                    <div className="row gy-4 row-cols-lg-2 row-cols-1">
+                        <div className="col">
+                            <div className={cls.box}>
+                                <div className={cls.box__wrap}>
+                                    <img src={phoneIcon} alt=""/>
+                                    <p>+7 (954) 333-44-55</p>
+                                </div>
+
+                                <div className={cls.box__wrap}>
+                                    <img src={emailIcon} alt=""/>
+                                    <p>{'email' in userDetails ? userDetails.email : 'not email'}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col">
                             <div className={cls.box}>
                                 <p>Clients see him as an expert in developing complex financial solutions
                                     products,
@@ -65,19 +78,7 @@ const UserDetails = () => {
                             </div>
 
                         </div>
-                        <div className="col-5">
-                            <div className={cls.box}>
-                                <div className={cls.box__wrap}>
-                                    <img src={phoneIcon} alt=""/>
-                                    <p>+7 (954) 333-44-55</p>
-                                </div>
 
-                                <div className={cls.box__wrap}>
-                                    <img src={emailIcon} alt=""/>
-                                    <p>{'email' in userDetails ? userDetails.email : 'not email'}</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>

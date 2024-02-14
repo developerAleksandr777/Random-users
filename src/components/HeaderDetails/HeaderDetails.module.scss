@@ -10,17 +10,28 @@ header {
     left: 80px;
     top: 32px;
   }
+
   .avaHeader {
     width: 187px;
     height: 187px;
     border-radius: 100px;
     margin-left: 29px;
+    display: block;
+  }
+
+  .avaHeaderMedia {
+    display: none;
   }
 
   .fullNameHeader {
     color: rgb(255, 255, 255);
     font-size: 64px;
     line-height: 75px;
+    display: block;
+  }
+
+  .fullNameHeaderMedia {
+    display: none;
   }
 
   .header__wrap {
@@ -28,12 +39,81 @@ header {
     align-items: center;
     column-gap: 32px;
   }
+
   .infoName {
-    p {
+    .partner {
       color: rgb(255, 255, 255);
       font-size: 32px;
       line-height: 38px;
       margin-top: 16px;
+      display: block;
     }
   }
+
+  .partnerMedia{
+    display: none;
+  }
+}
+
+.image {
+  display: none;
+}
+
+
+@media (max-width: 576px) {
+  .image {
+    display: block;
+    position: absolute;
+    left: 80px;
+    top: 32px;
+    width: 18px;
+    height: 18px;
+  }
+  .detailsHeaderButton {
+    display: none;
+  }
+
+  header {
+
+
+    .avaHeaderMedia {
+      width: 187px;
+      height: 187px;
+      border-radius: 100px;
+      display: block;
+    }
+
+    .avaHeader {
+      display: none;
+    }
+
+    .fullNameHeader {
+      color: rgb(255, 255, 255);
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    .header__wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 16px;
+    }
+
+    .infoName {
+      .partnerMedia {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        display: block;
+      }
+    }
+
+    .partner {
+      display: none;
+    }
+  }
+
 }

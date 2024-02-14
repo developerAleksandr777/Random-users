@@ -14,13 +14,14 @@ const Card = ({ user, func }: IProps) => {
 
     const { id, first_name, last_name, avatar } = user;
 
-    const handleLike = () => {
+    const handleLike = (e: { stopPropagation: () => void; }) => {
+        e.stopPropagation();
         setLikeState((prev) => !prev);
     };
 
     return (
         <div className="col">
-            <div className={cls.box} onDoubleClick={() => func(id)}>
+            <div className={cls.box} onClick={() => func(id)}>
                 <div className={cls.box__wrap}>
                     <img src={avatar} alt="" />
                     <h2>

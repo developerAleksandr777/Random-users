@@ -9,3 +9,21 @@
   right: 80px;
   top:  32px;
 }
+
+.image {
+  display: none;
+}
+
+@media (max-width:576px) {
+  .image {
+    display: block;
+    position: absolute;
+    right: 80px;
+    top:  32px;
+    width: 18px;
+    height: 18px;
+  }
+  .button {
+    display: none;
+  }
+}
