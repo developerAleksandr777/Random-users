@@ -1,26 +1,26 @@
 export {}
 export const INPUTS = [
     {
-        name: 'Имя',
-        inputName:'name',
-        placeholder: 'Введите Ваше имя',
+        name: 'Name',
+        inputName: 'name',
+        placeholder: 'Enter your name',
         type: 'text',
     },
     {
-        name: 'Электронная почта',
-        inputName:'email',
+        name: 'Email',
+        inputName: 'email',
         placeholder: 'example@mail.ru',
         type: 'text',
     },
     {
-        name: 'Пароль',
-        inputName:'pass',
-        placeholder: 'Введите Ваш пароль',
+        name: 'Password',
+        inputName: 'pass',
+        placeholder: 'Enter your password',
         type: 'password',
     }, {
-        name: 'Подтвердите пароль',
-        inputName:'repPass',
-        placeholder: 'Подтвердите Ваш пароль',
+        name: 'Confirm password',
+        inputName: 'repPass',
+        placeholder: 'Confirm your password',
         type: 'password',
     },
 ]

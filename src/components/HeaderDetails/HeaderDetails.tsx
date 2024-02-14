@@ -12,14 +12,14 @@ const HeaderDetails = () => {
         navigate('/')
     }
     const handleLogout = () => {
-        dispatch(REMOVE_TOKEN_ACTION(''))
-        navigate('/auth')
+        dispatch(REMOVE_TOKEN_ACTION())
+        navigate('/register')
     }
 
     return (
         <header>
-            <button onClick={backFunc} className={cls.detailsHeaderButton}>Назад</button>
-            <HeaderButton func={handleLogout} text={'Выход'} type={'button'}/>
+            <button onClick={backFunc} className={cls.detailsHeaderButton}>Back</button>
+            <HeaderButton func={handleLogout} text={'Logout'} type={'button'}/>
             <div className="container">
                 <div className={cls.header__wrap}>
                     <img className={cls.avaHeader} src={'avatar' in userDetails ? userDetails.avatar : 'not avatar'} alt=""/>

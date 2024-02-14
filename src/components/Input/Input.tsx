@@ -1,12 +1,13 @@
 import cls from './Input.module.scss';
 import React from 'react';
+import {useAppSelector} from "../../hooks/redux-hooks";
 
 interface IValues {
-    name: string;
     email: string;
     pass: string;
-    repPass: string;
-    [key: string]: string; // Сигнатура индекса, позволяющая использовать любые строки для индексации
+    name?: string;
+    repPass?: string;
+    [key: string]: string | undefined;
 }
 
 interface IProps {
@@ -18,14 +19,16 @@ interface IProps {
 }
 
 const Input: React.FC<IProps> = ({ values, placeholder, type, name, func }) => {
-    console.log(values)
+    const {regErr} = useAppSelector(state => state.auth)
+    const isError = values.pass !== values.repPass;
+
     return (
         <input
             style={{
-                border: values.pass !== values.repPass ? '1px solid red' : ''
+                border: isError || regErr ? '1px solid red' : ''
             }}
             onChange={func}
-            value={values[name]}
+            value={values[name] || ''}
             className={cls.input}
             name={name}
             placeholder={placeholder}

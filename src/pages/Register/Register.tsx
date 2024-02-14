@@ -2,8 +2,10 @@ import cls from './Register.module.scss'
 import {INPUTS} from "../../constants";
 import Input from "../../components/Input/Input";
 import {useState, ChangeEvent} from "react";
-import {useAppDispatch} from "../../hooks/redux-hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux-hooks";
 import {REGISTER_ASYNC} from "../../redux/actions/actions";
+import {Link} from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 interface IValues {
     name: string;
@@ -11,10 +13,12 @@ interface IValues {
     pass: string;
     repPass: string;
 
-    [key: string]: string; // Сигнатура индекса, позволяющая использовать любые строки для индексации
+    [key: string]: string;
 }
 
 const Register = () => {
+
+    const {regErr,loader} = useAppSelector(state => state.auth)
 
     const dispatch = useAppDispatch()
 
@@ -49,14 +53,17 @@ const Register = () => {
 
     return (
         <div className={cls.register}>
+            {loader && <Loader/>}
             <div className="container">
                 <div className={cls.registerWrap}>
                     <div className={cls.box}>
-                        <h2>Регистрация</h2>
+                        <h2>Registration</h2>
+                        <span className={cls.error}>{regErr}</span>
                         <div className={cls.wrap__inputs}>
                             {render}
                         </div>
-                        <button onClick={handleReg} disabled={values.pass !== values.repPass}>Зарегистрироваться</button>
+                        <button onClick={handleReg} disabled={values.pass !== values.repPass}>Register</button>
+                        <Link className={cls.linkLogin} to={'/login'}>Already have account?</Link>
                     </div>
                 </div>
             </div>

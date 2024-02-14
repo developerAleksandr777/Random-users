@@ -1,20 +1,34 @@
-import cls from './Card.module.scss'
-import {IUser} from "../../types";
+import cls from './Card.module.scss';
+import { IUser } from '../../types';
+import likeIcon from '../../assets/icons/likeIcon.svg';
+import unlikeIcon from '../../assets/icons/unlikeIcon.svg';
+import { useState } from 'react';
 
 interface IProps {
-    user:IUser,
-    func: ()=>void
+    user: IUser;
+    func: (id: number) => void;
 }
 
-const Card = ({user,func}:IProps) => {
-    const name = user.first_name
-    const surname = user.last_name
+const Card = ({ user, func }: IProps) => {
+    const [likeState, setLikeState] = useState(false);
+
+    const { id, first_name, last_name, avatar } = user;
+
+    const handleLike = () => {
+        setLikeState((prev) => !prev);
+    };
+
     return (
-        <div className='col'>
-            <div className={cls.box} onDoubleClick={func}>
+        <div className="col">
+            <div className={cls.box} onDoubleClick={() => func(id)}>
                 <div className={cls.box__wrap}>
-                    <img src={user.avatar} alt=""/>
-                    <h2>{name} {surname}</h2>
+                    <img src={avatar} alt="" />
+                    <h2>
+                        {first_name} {last_name}
+                    </h2>
+                </div>
+                <div onClick={handleLike} className={cls.like}>
+                    <img src={likeState ? likeIcon : unlikeIcon} alt="" />
                 </div>
             </div>
         </div>

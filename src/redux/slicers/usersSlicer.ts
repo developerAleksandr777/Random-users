@@ -1,14 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { IUser } from "../../types";
+import {createSlice} from '@reduxjs/toolkit'
+import {IUser} from "../../types";
 
 interface IState {
     users: IUser[],
-    userDetails: IUser | Record<string, never>
+    userDetails: IUser | Record<string, never>,
+    totalItems:number,
 }
 
 const initialState: IState = {
     users: [],
-    userDetails: {} as Record<string, never>
+    userDetails: {} as Record<string, never>,
+    totalItems:0,
 }
 
 const usersSlice = createSlice({
@@ -21,11 +23,21 @@ const usersSlice = createSlice({
         GET_USER_DETAILS_ACTION(state, action) {
             state.userDetails = action.payload
         },
-        CLEAR_DETAILS_ACTION(state, action) {
+        CLEAR_DETAILS_ACTION(state) {
             state.userDetails = {} as Record<string, never>
-        }
+        },
+        PAGINATION_TOTAL_ITEMS(state, action) {
+            state.totalItems = action.payload
+        },
+
     },
 })
 
-export const { GET_USERS_ACTION, GET_USER_DETAILS_ACTION, CLEAR_DETAILS_ACTION } = usersSlice.actions
+export const {
+    GET_USERS_ACTION,
+    GET_USER_DETAILS_ACTION,
+    CLEAR_DETAILS_ACTION,
+    PAGINATION_TOTAL_ITEMS,
+
+} = usersSlice.actions
 export default usersSlice.reducer

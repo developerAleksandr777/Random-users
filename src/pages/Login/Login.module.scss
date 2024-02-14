@@ -1,4 +1,4 @@
-.registerWrap {
+.login__wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,17 @@
       .render__inputs {
         p {
           margin-bottom: 8px;
+        }
+        input {
+          width: 100%;
+          padding: 12px 8px 12px 16px;
+          border-radius: 8px;
+          background: rgb(248, 248, 248);
+          border: none;
+          color: rgb(128, 129, 133);
+          font-size: 14px;
+          line-height: 16px;
+          outline: none;
         }
       }
     }

@@ -4,6 +4,7 @@ import UserDetails from "./pages/UsersPage/UserDetails/UserDetails";
 import Layout from "./Layout/Layout";
 import {useAppSelector} from "./hooks/redux-hooks";
 import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
 
 
 const View = () => {
@@ -12,14 +13,18 @@ const View = () => {
 
     return (
         <Routes>
-            <Route path="/" element={auth ? <Layout/> : <Navigate to="/auth"/>}>
+            <Route path="/" element={auth ? <Layout/> : <Navigate to="/register"/>}>
                 <Route index element={<UsersPage/>}/>
                 <Route path={'/user-details/:id'} element={<UserDetails/>}/>
             </Route>
 
             <Route
-                path="/auth"
+                path="/register"
                 element={auth ? <Navigate to="/"/> : <Register/>}
+            />
+            <Route
+                path="/login"
+                element={auth ? <Navigate to="/"/> : <Login/>}
             />
         </Routes>
     );

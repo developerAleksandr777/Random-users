@@ -17,7 +17,7 @@ const UserDetails = () => {
         if (typeof id === 'string') {
             dispatch(GET_USER_DETAILS(id));
             return () => {
-                dispatch(CLEAR_DETAILS_ACTION({}))
+                dispatch(CLEAR_DETAILS_ACTION())
             }
         }
     }, [dispatch, id])
@@ -30,33 +30,38 @@ const UserDetails = () => {
                     <div className="row">
                         <div className="col-7">
                             <div className={cls.box}>
-                                <p>Клиенты видят в нем эксперта по вопросам разработки комплексных решений финансовых
-                                    продуктов,
-                                    включая такие аспекты, как организационная структура, процессы, аналитика и
-                                    ИТ-компоненты. Он
-                                    помогает клиентам лучше понимать структуру рисков их бизнеса, улучшать процессы за
-                                    счет
-                                    применения новейших технологий и увеличивать продажи, используя самые современные
-                                    аналитические
-                                    инструменты.</p>
+                                <p>Clients see him as an expert in developing complex financial solutions
+                                    products,
+                                    including aspects such as organizational structure, processes, analytics and
+                                    IT components. He
+                                    helps clients better understand the risk structure of their business, improve
+                                    processes for
+                                    check
+                                    application of the latest technologies and increase sales using the most modern
+                                    analytical
+                                    tools.</p>
                                 <br/>
-                                <p>В работе с клиентами недостаточно просто решить конкретную проблему или помочь
-                                    справиться с
-                                    трудностями. Не менее важно уделять внимание обмену знаниями: "Один из самых
-                                    позитивных моментов
-                                    — это осознание того, что ты помог клиенту перейти на совершенно новый уровень
-                                    компетентности,
-                                    уверенность в том, что после окончания проекта у клиента есть все необходимое, чтобы
-                                    дальше
-                                    развиваться самостоятельно".</p>
+                                <p>When working with clients, it is not enough just to solve a specific problem or help
+                                    cope with
+                                    difficulties. It is equally important to pay attention to knowledge sharing: “One of
+                                    the most
+                                    positive points
+                                    - this is the realization that you have helped the client move to a completely new
+                                    level
+                                    competence,
+                                    confidence that after the completion of the project the client has everything
+                                    necessary to
+                                    further
+                                    develop independently."</p>
 
                                 <br/>
                                 <p>
-                                    Помимо разнообразных проектов для клиентов финансового сектора, Сорин ведет активную
-                                    предпринимательскую деятельность. Он является совладельцем сети клиник эстетической
-                                    медицины в
-                                    Швейцарии, предлагающей инновационный подход к красоте, а также инвестором других
-                                    бизнес-проектов.</p>
+                                    In addition to various projects for clients in the financial sector, Sorin is active
+                                    entrepreneurial activity. He is a co-owner of a network of aesthetic clinics
+                                    medicine in
+                                    Switzerland, which offers an innovative approach to beauty, and is also an investor
+                                    in others
+                                    business projects.</p>
                             </div>
 
                         </div>
